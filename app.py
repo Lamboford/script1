@@ -16,7 +16,7 @@ CORS(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+   return "Hello, Railway!"
 
 @app.route('/download', methods=['POST'])
 def download_song():
@@ -72,5 +72,5 @@ def download_song():
         return jsonify({"error": str(e)}), 500
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    port = int(os.environ.get("PORT", 5000))  # Use environment port
+    app.run(host="0.0.0.0", port=port)  
